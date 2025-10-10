@@ -1,0 +1,9 @@
+{
+  "/page": "app/page.js",
+  "/tour/page": "app/tour/page.js",
+  "/faq/page": "app/faq/page.js",
+  "/dpdp/page": "app/dpdp/page.js",
+  "/platform/page": "app/platform/page.js",
+  "/checklist/page": "app/checklist/page.js",
+  "/pricing/page": "app/pricing/page.js"
+}
