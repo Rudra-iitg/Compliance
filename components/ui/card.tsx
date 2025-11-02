@@ -3,7 +3,7 @@
 import * as React from "react";
 
 export const Card: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({ className = "", ...props }) => (
-  <div className={`hover-brackets rounded-2xl border border-white/10 bg-white/5 ${className}`.trim()} {...props} />
+  <div className={`rounded-2xl border border-white/10 bg-white/5 ${className}`.trim()} {...props} />
 );
 
 export const CardHeader: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({ className = "", ...props }) => (

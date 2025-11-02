@@ -20,6 +20,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Section } from "@/components/site/Section";
 import { Feature as FeatureTile } from "@/components/site/Feature";
+import { HeroDataBackground } from "@/components/site/HeroDataBackground";
 import Link from "next/link";
 
 // --- Visual helpers ---
@@ -48,6 +49,7 @@ const Parallax: React.FC = () => {
 const Hero = () => (
   <Section id="home" className="relative pt-28 pb-24">
     <Parallax />
+    <HeroDataBackground />
     <div className="relative z-10 grid lg:grid-cols-2 gap-10 items-center">
       <div>
         <Pill>Compliance Project • DPDP 2023 ready</Pill>

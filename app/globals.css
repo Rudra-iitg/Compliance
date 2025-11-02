@@ -18,29 +18,4 @@ body{
 .navlink:after{ content:""; position:absolute; left:0; bottom:-2px; width:0; height:2px; background:linear-gradient(90deg, var(--teal), var(--amber)); transition:width .35s ease }
 .navlink:hover:after{ width:100% }
 
-/* --- Hover corner brackets (global) --- */
-.hover-brackets{ position:relative; transition: transform .25s ease; will-change: transform; }
-.hover-brackets:before{
-  content:""; position:absolute; inset:0; pointer-events:none; border-radius:inherit; opacity:0; transform: scale(.985);
-  background:
-    /* TL */ linear-gradient(var(--teal), var(--teal)) left 8px top 8px/18px 2px no-repeat,
-    linear-gradient(var(--teal), var(--teal)) left 8px top 8px/2px 18px no-repeat,
-    /* TR */ linear-gradient(var(--teal), var(--teal)) right 8px top 8px/18px 2px no-repeat,
-    linear-gradient(var(--teal), var(--teal)) right 8px top 8px/2px 18px no-repeat,
-    /* BL */ linear-gradient(var(--teal), var(--teal)) left 8px bottom 8px/18px 2px no-repeat,
-    linear-gradient(var(--teal), var(--teal)) left 8px bottom 8px/2px 18px no-repeat,
-    /* BR */ linear-gradient(var(--teal), var(--teal)) right 8px bottom 8px/18px 2px no-repeat,
-    linear-gradient(var(--teal), var(--teal)) right 8px bottom 8px/2px 18px no-repeat;
-  transition: opacity .22s ease, transform .22s ease;
-}
-.hover-brackets:hover{ transform: translateZ(0) scale(1.03); }
-.hover-brackets:hover:before{ opacity:.75; transform: scale(1); }
-
-/* Avoid double brackets when the global overlay is active */
-body.has-bracket-overlay .hover-brackets:hover:before{ opacity: 0; }
-
-@media (prefers-reduced-motion: reduce){
-  .hover-brackets{ transition: none; }
-  .hover-brackets:before{ transition: none; }
-  .hover-brackets:hover{ transform: none; }
-}
+/* Hover corner brackets disabled site-wide */
