@@ -17,20 +17,27 @@ export const Nav: React.FC = () => {
   ];
 
   return (
-    <div className="fixed z-40 top-4 left-1/2 -translate-x-1/2 glass rounded-full pl-3 pr-6 py-2 flex items-center gap-6">
+    <div className="fixed z-40 top-4 left-1/2 -translate-x-1/2 glass rounded-full pl-5 pr-5 py-3.5 flex items-center gap-8">
       <Link href="/" className="flex items-center gap-2">
-        <Image src="/logo2.png" alt="Compliance" width={24} height={24} />
+        <Image src="/logo2.png" alt="Compliance" width={28} height={28} />
         <span className="text-sm font-medium hidden sm:inline">Compliance</span>
       </Link>
-      {links.map(({ label, href }) => (
-        <Link
-          key={href}
-          href={href}
-          className={`navlink text-sm ${pathname === href ? "text-white" : "text-slate-200 hover:text-white"}`}
-        >
-          {label}
-        </Link>
-      ))}
+      {links.map(({ label, href }) => {
+        const isActive = href === "/" ? pathname === "/" : pathname.startsWith(href);
+        return (
+          <Link
+            key={href}
+            href={href}
+            className={`navlink text-sm ${isActive ? "active text-white" : "text-slate-200 hover:text-white"}`}
+          >
+            {label}
+          </Link>
+        );
+      })}
+      <div className="hidden md:flex items-center gap-2 pl-4 border-l border-white/10 ml-4">
+        <Link href="/login" className="inline-flex items-center h-10 px-5 rounded-md border border-white/20 text-white hover:bg-white/10 text-sm">Login</Link>
+        <Link href="/signup" className="inline-flex items-center h-10 px-5 rounded-md bg-teal-300/90 text-black hover:opacity-90 text-sm">Get Started</Link>
+      </div>
     </div>
   );
 };
